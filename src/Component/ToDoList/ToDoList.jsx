@@ -86,7 +86,7 @@ const ToDoList = () => {
           {tasks.map((t) => (
             <li
               key={t.id}
-              className="flex items-center gap-3 justify-between p-3 border rounded-lg"
+              className="flex items-start gap-3 p-3 border rounded-lg"
             >
               <button
                 onClick={() => toggleTask(t.id)}
@@ -104,7 +104,7 @@ const ToDoList = () => {
                 {t.completed && <FaCheck className="text-xs" />}
               </button>
               <span
-                className={`flex-1 ${
+                className={`flex-1 break-all whitespace-normal ${
                   t.completed ? "line-through text-gray-400" : "text-gray-700"
                 }`}
               >
@@ -113,7 +113,7 @@ const ToDoList = () => {
 
               <button
                 onClick={() => deleteTask(t.id)}
-                className="text-red-500 hover:text-red-600 text-xl hover:bg-red-100"
+                className="text-red-500 hover:text-red-600 text-xl hover:bg-red-100 self-start"
               >
                 <RxCross2 />
               </button>
